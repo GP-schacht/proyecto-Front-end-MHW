@@ -1,474 +1,648 @@
-@font-face {
-  font-family: "mh";
-  src: url(/recursos/fonts/MarkaziText-VariableFont_wght.ttf);
-}
+/* ===================== MEDIA QUERIES RESPONSIVAS ===================== */
 
-* {
-  font-family: "mh";
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scrollbar-width: none;
-}
-
-main {
-  max-width: 75vw;
-  padding: 3rem;
-  margin: auto;
-}
-
-/* ===================== seccion informacion primaria ===================== */
-.container1 {
-  background-image: url("/recursos//BgImagen3.webp");
-  border-start-end-radius: 8px;
-  border-start-start-radius: 8px;
-  padding: 40px;
-  position: relative;
-}
-.encabezado {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-.informacion {
-  display: flex;
-  flex-direction: column;
-  h2 {
-    font-size: 40px;
-    margin-bottom: 1rem;
+/* Tabletas (769px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  main {
+    max-width: 85vw;
+    padding: 2rem;
   }
-  p {
-    font-size: 24px;
+  
+  .container1 {
+    padding: 30px;
   }
-}
-.icono {
-  max-width: 250px;
-  min-width: 100px;
-  width: 100%;
-  height: auto;
-}
-/* ==================================================================================== */
-/* ===================== Informacio secundaria ===================== */
-.container2 {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.infoSecundaria {
-  background-color: #a497808a;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: left;
-  div {
-    justify-self: left;
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
+  
+  .informacion h2 {
+    font-size: 36px;
   }
-  p {
-    font-size: 24px;
+  
+  .informacion p {
+    font-size: 22px;
+  }
+  
+  .icono {
+    max-width: 200px;
+  }
+  
+  .imagenMonstruo {
+    max-width: 400px;
+  }
+  
+  .elmentosContainer h3,
+  .debilidadesContainer h3,
+  .rango h3,
+  .biomaContainer h1 {
+    font-size: 36px;
+  }
+  
+  .elementos,
+  .debilidades div,
+  .rango div,
+  .biomas div,
+  .items div {
+    font-size: 22px;
+  }
+  
+  .botonRegresar {
+    top: 24px;
+    left: 24px;
+    font-size: 22px;
+  }
+  
+  .botonEditar,
+  .botonEliminar {
+    font-size: 22px;
+  }
+  
+  .modalAdvertencia {
+    padding: 30px;
+    font-size: 22px;
+  }
+  
+  .advert {
+    font-size: 36px;
+  }
+  
+  .borde1, .borde2, .borde3, .borde4 {
+    width: 80px;
   }
 }
-.imagenMonstruo {
-  max-width: 500px;
-  width: 100%;
-  height: auto;
-}
-/* =============================================================== */
 
-/* ===================== Elementos y de debilidad del mosntruo ===================== */
-
-.atributos {
-  display: flex;
-  gap: 1rem;
-  flex-direction: row;
-}
-.elmentosContainer,
-.debilidadesContainer {
-  border-radius: 8px;
-  padding: 1rem;
-  width: 50%;
-  background-color: rgba(0, 0, 0, 0.406);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  h3 {
-    font-size: 40px;
+/* Tabletas pequeñas (577px - 768px) */
+@media (max-width: 768px) and (min-width: 577px) {
+  main {
+    max-width: 90vw;
+    padding: 1.5rem;
   }
-}
-.elementos {
-  display: flex;
-  flex-direction: column;
-  font-size: 24px;
-}
-.debilidades {
-  div {
-    font-size: 24px;
-    display: flex;
-    flex-direction: row;
+  
+  .encabezado {
+    flex-direction: column;
+    text-align: center;
     gap: 20px;
   }
-}
-/* ==================================================================================== */
-
-/* ===================== seccion del rango ===================== */
-.rangoContainer {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-.rango {
-  background-color: rgba(0, 0, 0, 0.406);
-  width: 50%;
-  color: white;
-  display: flex;
-  border-radius: 8px;
-  padding: 1rem;
-  flex-direction: column;
-  h3 {
+  
+  .container1 {
+    padding: 25px;
+  }
+  
+  .informacion h2 {
+    font-size: 32px;
+  }
+  
+  .informacion p {
+    font-size: 20px;
+  }
+  
+  .icono {
+    max-width: 180px;
+  }
+  
+  .infoSecundaria {
+    flex-direction: column;
     text-align: center;
-    font-size: 40px;
   }
-  div {
-    font-size: 24px;
+  
+  .imagenMonstruo {
+    max-width: 350px;
   }
-}
-/* =============================================================== */
-/* ===================== seccion del bioma ===================== */
-.biomaContainer {
-  border-start-end-radius: 10px;
-  border-start-start-radius: 10px;
-  padding: 24px;
-  gap: 20px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.406);
-  h1 {
-    text-align: center;
-    font-size: 40px;
+  
+  .atributos {
+    flex-direction: column;
+    gap: 1rem;
   }
-}
-.biomas {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  div {
-    text-align: center;
-    font-size: 24px;
+  
+  .elmentosContainer,
+  .debilidadesContainer {
+    width: 100%;
+  }
+  
+  .elmentosContainer h3,
+  .debilidadesContainer h3,
+  .rango h3,
+  .biomaContainer h1 {
+    font-size: 32px;
+  }
+  
+  .elementos,
+  .debilidades div,
+  .rango div,
+  .biomas div,
+  .items div {
+    font-size: 20px;
+  }
+  
+  .rango {
+    width: 70%;
+  }
+  
+  .botonRegresar {
+    top: 16px;
+    left: 16px;
+    font-size: 20px;
+    padding: 6px 16px;
+    min-height: 44px;
+  }
+  
+  .botonContainer {
+    gap: 20px;
+    padding: 15px;
+  }
+  
+  .botonEditar,
+  .botonEliminar {
+    font-size: 20px;
+    padding: 4px 16px;
+    min-height: 44px;
+  }
+  
+  .modalAdvertencia {
+    padding: 25px;
+    font-size: 20px;
+    width: 80%;
+  }
+  
+  .advert {
+    font-size: 32px;
+  }
+  
+  .borde1, .borde2, .borde3, .borde4 {
+    width: 60px;
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+  
+  .borde2 {
+    right: 0.5rem;
+  }
+  
+  .borde3 {
+    bottom: 0.5rem;
+    right: 0.5rem;
+  }
+  
+  .borde4 {
+    bottom: 0.5rem;
+    left: 0.5rem;
+  }
+  
+  footer div {
+    height: 250px;
+    padding: 16px;
   }
 }
 
-.imagenBioma {
-  border-radius: 10px;
-  max-width: 500px;
-  width: 100%;
-  height: auto;
-  min-width: 250px;
-}
-/* =============================================================== */
-
-/* ===================== seccion de los items ===================== */
-.itemsContainer {
-  display: flex;
-  padding: 20px;
-  gap: 8px;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.406);
-  color: white;
-  border-end-end-radius: 10px;
-  border-end-start-radius: 10px;
-}
-.items {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  div {
-    font-size: 24px;
-    display: flex;
+/* Móviles (481px - 576px) */
+@media (max-width: 576px) and (min-width: 481px) {
+  main {
+    max-width: 95vw;
+    padding: 1rem;
+  }
+  
+  .encabezado {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .container1 {
+    padding: 20px;
+  }
+  
+  .informacion h2 {
+    font-size: 28px;
+  }
+  
+  .informacion p {
+    font-size: 18px;
+  }
+  
+  .icono {
+    max-width: 150px;
+  }
+  
+  .infoSecundaria {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .infoSecundaria div {
     flex-direction: column;
     align-items: center;
-    border-bottom: 1px solid white;
   }
-}
-/* =============================================================== */
-
-/* ===================== estilos de decoraciones ===================== */
-.transition {
-  min-height: 1vh;
-  height: 1vh;
-  border: none;
-  background-image: url("/recursos/transition.png");
-  background-size: cover;
-  width: 100%;
-}
-.separadorDecoracion {
-  height: 2vh;
-  min-height: 2vh;
-  background-size: cover;
-  max-width: 75%;
-  margin: 0 auto 0 auto;
-  width: 100%;
-  background-image: url("/recursos/decoraciones/decoracion\ 4.webp");
-}
-.borde1 {
-  top: 1rem;
-  left: 1rem;
-  position: absolute;
-  width: 100px;
-  transform: scale(-1, 1);
-}
-.borde2 {
-  top: 1rem;
-  right: 1rem;
-  position: absolute;
-  width: 100px;
-}
-.borde3 {
-  bottom: 1rem;
-  right: 1rem;
-  position: absolute;
-  width: 100px;
-  rotate: 180deg;
-  transform: scale(-1, 1);
-}
-.borde4 {
-  bottom: 1rem;
-  left: 1rem;
-  position: absolute;
-  width: 100px;
-  rotate: 180deg;
-}
-/* =============================================================== */
-
-/* ===================== estilos del fondo ===================== */
-.background {
-  background-image: url("/recursos/bg_menu_pc.webp");
-  background-repeat: no-repeat;
-  background-origin: border-box;
-  background-position-x: center;
-  z-index: -1;
-  background-size: cover;
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-}
-/* =============================================================== */
-
-/* ===================== estilos de los botones ===================== */
-.botonRegresar {
-  z-index: 4;
-  top: 32px;
-  left: 32px;
-  position: fixed;
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  padding: 8px 20px;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 20px;
-  align-items: center;
-  font-size: 24px;
-}
-.botonRegresar:hover {
-  color: rgb(255, 255, 133);
-  animation: regreso alternate 0.5s infinite;
-  left: 10px;
-}
-
-.punteroBoton {
-  transform: scale(-1, 1);
-}
-.botonContainer {
-  background-color: rgba(0, 0, 0, 0.406);
-  padding: 20px;
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-  justify-content: center;
-  width: 100%;
-}
-.botonEditar,
-.botonEliminar {
-  border-radius: 8px;
-  background-color: transparent;
-  border: none;
-  font-size: 24px;
-  padding: 2px 20px;
-}
-.botonEditar {
-  border: 1px solid orange;
-  cursor: pointer;
-  color: orange;
-}
-.botonEditar:hover {
-  background-color: orange;
-  color: white;
-}
-.botonEliminar {
-  color: red;
-  cursor: pointer;
-  border: 1px solid red;
-}
-.botonEliminar:hover {
-  color: white;
-  background-color: red;
-}
-/* =============================================================== */
-
-/* ===================== pantalla de advertencia ===================== */
-.modalAdvertencia {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 40px;
-  width: max-content;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  gap: 20px;
-  color: white;
-  background-color: rgb(0, 0, 0);
-  font-size: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.modalContainer {
-  z-index: 5;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.658);
-}
-.textContainer {
-  display: flex;
-  flex-direction: column;
-}
-.advert {
-  font-size: 40px;
-  text-align: center;
-}
-.bo {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-}
-.si,
-.no {
-  cursor: pointer;
-  background-color: transparent;
-  font-size: 20px;
-  padding: 2px 20px;
-}
-.si {
-  color: red;
-  border: 1px solid red;
-}
-.si:hover {
-  color: white;
-  background-color: red;
-}
-.no {
-  color: white;
-  border: 1px solid white;
-}
-.no:hover {
-  background-color: white;
-  color: black;
-}
-.animationBorder {
-  animation-name: ani-opcity;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-.breathAnimation {
-  animation-name: saturate;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-/* =============================================================== */
-
-/* ===================== animaciones ===================== */
-@keyframes regreso {
-  0% {
-    left: 32px;
+  
+  .imagenMonstruo {
+    max-width: 300px;
   }
-  25% {
-    left: 25px;
-  }
-  50% {
-    left: 20px;
-  }
-  75% {
-    left: 15px;
-  }
-  100% {
-    left: 10px;
-  }
-}
-
-@keyframes ani-opcity {
-  0% {
-    opacity: 0;
-  }
-  25% {
-    opacity: 0.25;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  75% {
-    opacity: 0.75;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes saturate {
-  0% {
-    filter: drop-shadow(0 0 0.75rem rgb(241, 175, 31))
-      drop-shadow(0 0 0.75rem rgb(241, 175, 31));
-  }
-
-  50% {
-    filter: drop-shadow(0 0 0.75rem rgba(241, 175, 31, 0.541))
-      drop-shadow(0 0 0.75rem rgba(241, 175, 31, 0.541));
-  }
-
-  100% {
-    filter: drop-shadow(0 0 0.75rem rgba(241, 175, 31, 0.089))
-      drop-shadow(0 0 0.75rem rgba(241, 175, 31, 0.116));
-  }
-}
-/* =============================================================== */
-
-footer {
-  display: flex;
-  flex-direction: column;
-  div{
-    color:  #dcdcdc;
-    padding: 8px 24px 8px 24px;
-    height: 300px;
-    display: flex;
-    justify-content: center;
+  
+  .atributos {
     flex-direction: column;
-    background-image: url(/recursos/footer_bg.png);
-    background-size: cover;
+    gap: 0.8rem;
+  }
+  
+  .elmentosContainer,
+  .debilidadesContainer {
     width: 100%;
-  } 
+    padding: 0.8rem;
+  }
+  
+  .elmentosContainer h3,
+  .debilidadesContainer h3,
+  .rango h3,
+  .biomaContainer h1 {
+    font-size: 28px;
+  }
+  
+  .elementos,
+  .debilidades div,
+  .rango div,
+  .biomas div,
+  .items div {
+    font-size: 18px;
+  }
+  
+  .rango {
+    width: 85%;
+    padding: 0.8rem;
+  }
+  
+  .biomaContainer {
+    padding: 20px;
+  }
+  
+  .imagenBioma {
+    max-width: 350px;
+  }
+  
+  .itemsContainer {
+    padding: 15px;
+  }
+  
+  .botonRegresar {
+    top: 12px;
+    left: 12px;
+    font-size: 18px;
+    padding: 8px 12px;
+    min-height: 44px;
+    gap: 12px;
+  }
+  
+  .botonContainer {
+    gap: 15px;
+    padding: 12px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .botonEditar,
+  .botonEliminar {
+    font-size: 18px;
+    padding: 6px 20px;
+    min-height: 44px;
+    width: 200px;
+  }
+  
+  .modalAdvertencia {
+    padding: 20px;
+    font-size: 18px;
+    width: 85%;
+  }
+  
+  .advert {
+    font-size: 28px;
+  }
+  
+  .bo {
+    gap: 20px;
+  }
+  
+  .si,
+  .no {
+    font-size: 18px;
+    padding: 4px 16px;
+    min-height: 44px;
+  }
+  
+  .borde1, .borde2, .borde3, .borde4 {
+    width: 50px;
+    top: 0.3rem;
+    left: 0.3rem;
+  }
+  
+  .borde2 {
+    right: 0.3rem;
+  }
+  
+  .borde3 {
+    bottom: 0.3rem;
+    right: 0.3rem;
+  }
+  
+  .borde4 {
+    bottom: 0.3rem;
+    left: 0.3rem;
+  }
+  
+  footer div {
+    height: 200px;
+    padding: 12px;
+  }
+  
+  .transition {
+    height: 0.8vh;
+  }
+  
+  .separadorDecoracion {
+    height: 1.5vh;
+  }
+}
+
+/* Móviles pequeños (menos de 480px) */
+@media (max-width: 480px) {
+  main {
+    max-width: 98vw;
+    padding: 0.5rem;
+  }
+  
+  .encabezado {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .container1 {
+    padding: 15px;
+  }
+  
+  .informacion h2 {
+    font-size: 24px;
+  }
+  
+  .informacion p {
+    font-size: 16px;
+  }
+  
+  .icono {
+    max-width: 120px;
+  }
+  
+  .infoSecundaria {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .infoSecundaria div {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .infoSecundaria p {
+    font-size: 16px;
+  }
+  
+  .imagenMonstruo {
+    max-width: 250px;
+  }
+  
+  .atributos {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .elmentosContainer,
+  .debilidadesContainer {
+    width: 100%;
+    padding: 0.5rem;
+  }
+  
+  .elmentosContainer h3,
+  .debilidadesContainer h3,
+  .rango h3,
+  .biomaContainer h1 {
+    font-size: 24px;
+  }
+  
+  .elementos,
+  .debilidades div,
+  .rango div,
+  .biomas div,
+  .items div {
+    font-size: 16px;
+  }
+  
+  .rango {
+    width: 95%;
+    padding: 0.5rem;
+  }
+  
+  .biomaContainer {
+    padding: 15px;
+    gap: 15px;
+  }
+  
+  .imagenBioma {
+    max-width: 280px;
+    min-width: 200px;
+  }
+  
+  .itemsContainer {
+    padding: 10px;
+  }
+  
+  .botonRegresar {
+    top: 8px;
+    left: 8px;
+    font-size: 16px;
+    padding: 6px 10px;
+    min-height: 44px;
+    gap: 8px;
+  }
+  
+  .botonContainer {
+    gap: 10px;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .botonEditar,
+  .botonEliminar {
+    font-size: 16px;
+    padding: 8px 16px;
+    min-height: 44px;
+    width: 180px;
+  }
+  
+  .modalAdvertencia {
+    padding: 15px;
+    font-size: 16px;
+    width: 90%;
+  }
+  
+  .advert {
+    font-size: 24px;
+  }
+  
+  .bo {
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .si,
+  .no {
+    font-size: 16px;
+    padding: 6px 20px;
+    min-height: 44px;
+    width: 120px;
+  }
+  
+  .borde1, .borde2, .borde3, .borde4 {
+    width: 40px;
+    top: 0.2rem;
+    left: 0.2rem;
+  }
+  
+  .borde2 {
+    right: 0.2rem;
+  }
+  
+  .borde3 {
+    bottom: 0.2rem;
+    right: 0.2rem;
+  }
+  
+  .borde4 {
+    bottom: 0.2rem;
+    left: 0.2rem;
+  }
+  
+  footer div {
+    height: 180px;
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  .transition {
+    height: 0.5vh;
+  }
+  
+  .separadorDecoracion {
+    height: 1vh;
+    max-width: 85%;
+  }
+}
+
+/* Orientación landscape en móviles */
+@media (max-height: 500px) and (max-width: 768px) {
+  main {
+    padding: 0.5rem;
+  }
+  
+  .container1 {
+    padding: 15px;
+  }
+  
+  .informacion h2 {
+    font-size: 20px;
+  }
+  
+  .informacion p {
+    font-size: 14px;
+  }
+  
+  .icono {
+    max-width: 80px;
+  }
+  
+  .elmentosContainer h3,
+  .debilidadesContainer h3,
+  .rango h3,
+  .biomaContainer h1 {
+    font-size: 20px;
+  }
+  
+  .elementos,
+  .debilidades div,
+  .rango div,
+  .biomas div,
+  .items div {
+    font-size: 14px;
+  }
+  
+  .botonRegresar {
+    top: 5px;
+    left: 5px;
+    font-size: 14px;
+  }
+  
+  footer div {
+    height: 150px;
+  }
+}
+
+/* Pantallas muy grandes (más de 1440px) */
+@media (min-width: 1440px) {
+  main {
+    max-width: 70vw;
+  }
+  
+  .informacion h2 {
+    font-size: 44px;
+  }
+  
+  .informacion p {
+    font-size: 26px;
+  }
+  
+  .icono {
+    max-width: 300px;
+  }
+  
+  .imagenMonstruo {
+    max-width: 600px;
+  }
+  
+  .elmentosContainer h3,
+  .debilidadesContainer h3,
+  .rango h3,
+  .biomaContainer h1 {
+    font-size: 44px;
+  }
+  
+  .elementos,
+  .debilidades div,
+  .rango div,
+  .biomas div,
+  .items div {
+    font-size: 26px;
+  }
+}
+
+/* ===================== MEJORAS DE ACCESIBILIDAD ===================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .botonRegresar:hover {
+    animation: none;
+  }
+  
+  .animationBorder,
+  .breathAnimation {
+    animation: none;
+  }
+}
+
+/* Mejorar focus para navegación con teclado */
+.botonRegresar:focus-visible,
+.botonEditar:focus-visible,
+.botonEliminar:focus-visible,
+.si:focus-visible,
+.no:focus-visible {
+  outline: 2px solid rgb(241, 175, 31);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Asegurar que las imágenes sean responsivas */
+img {
+  max-width: 100%;
+  height: auto;
 }

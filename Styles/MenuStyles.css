@@ -178,19 +178,88 @@
 }
 /* =============================================================== */
 
-/*===================== Cambiar estilos cuando llegue a un tamano en especifico =====================*/
-@media (758px > width) {
+/*===================== MEDIA QUERIES CORREGIDAS =====================*/
+
+/* Tabletas (769px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .menu_nav {
+    margin-top: 5rem;
+    gap: 20px;
+  }
+  
+  .menu_nav a,
+  .menuButton {
+    font-size: 28px;
+  }
+  
+  .menuButton::before,
+  .menuButton::after {
+    height: 2.5rem;
+    width: 2.5rem;
+    left: -3rem;
+  }
+  
+  #resultados {
+    height: 500px;
+  }
+  
+  .monstroCard {
+    font-size: 22px;
+    height: 30%;
+  }
+  
+  .agregarMonstruo {
+    bottom: 3rem;
+    right: 3rem;
+  }
+  
+  .agregarMonstruo p {
+    font-size: 45px;
+  }
+  
+  .botonAgregar {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Tabletas pequeñas (577px - 768px) */
+@media (max-width: 768px) and (min-width: 577px) {
   .menu_nav {
     padding: 12px;
     flex-direction: column;
+    margin-top: 4rem;
+    gap: 15px;
   }
 
   .menu_nav > li {
-    left: 50%;
+    left: 0;
+    text-align: center;
+    width: 100%;
   }
 
   #contenedor2 {
     background-image: url(/recursos/bg_menu_movil.jpg);
+    padding: 0.5rem;
+  }
+
+  .menu_nav a,
+  .menuButton {
+    font-size: 26px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+  }
+  
+  .menuButton::before,
+  .menuButton::after {
+    position: relative;
+    left: 0;
+    margin-right: 10px;
+    height: 2rem;
+    width: 2rem;
   }
 
   #resultados {
@@ -198,15 +267,263 @@
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
+    height: 500px;
   }
 
   .monstroCard {
-    height: 230px;
+    height: 200px;
     flex-direction: column;
     font-size: 20px;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+  }
+  
+  .agregarMonstruo {
+    bottom: 2.5rem;
+    right: 2.5rem;
+  }
+  
+  .agregarMonstruo p {
+    font-size: 40px;
+  }
+  
+  .botonAgregar {
+    width: 40px;
+    height: 40px;
   }
 }
-/* ==================================================================================== */
+
+/* Móviles (481px - 576px) */
+@media (max-width: 576px) and (min-width: 481px) {
+  .menu_nav {
+    padding: 10px;
+    flex-direction: column;
+    margin-top: 3rem;
+    gap: 12px;
+  }
+
+  .menu_nav > li {
+    left: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  #contenedor2 {
+    background-image: url(/recursos/bg_menu_movil.jpg);
+    padding: 0.5rem;
+  }
+
+  .menu_nav a,
+  .menuButton {
+    font-size: 22px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 8px 0;
+  }
+  
+  .menuButton::before,
+  .menuButton::after {
+    position: relative;
+    left: 0;
+    margin-right: 8px;
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+
+  #resultados {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 400px;
+    padding-top: 0.5rem;
+  }
+
+  .monstroCard {
+    height: 180px;
+    flex-direction: column;
+    font-size: 18px;
+    width: 100%;
+    max-width: 250px;
+    margin: 8px 0;
+  }
+  
+  .agregarMonstruo {
+    bottom: 2rem;
+    right: 2rem;
+  }
+  
+  .agregarMonstruo p {
+    font-size: 35px;
+  }
+  
+  .botonAgregar {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Móviles pequeños (menos de 480px) */
+@media (max-width: 480px) {
+  .menu_nav {
+    padding: 8px;
+    flex-direction: column;
+    margin-top: 2.5rem;
+    gap: 10px;
+  }
+
+  .menu_nav > li {
+    left: 0;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  #contenedor2 {
+    background-image: url(/recursos/bg_menu_movil.jpg);
+    padding: 0.3rem;
+  }
+
+  .menu_nav a,
+  .menuButton {
+    font-size: 20px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 6px 0;
+    min-height: 44px; /* Tamaño táctil mínimo */
+  }
+  
+  .menuButton::before,
+  .menuButton::after {
+    position: relative;
+    left: 0;
+    margin-right: 6px;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  #resultados {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 350px;
+    padding-top: 0.3rem;
+  }
+
+  .monstroCard {
+    height: 150px;
+    flex-direction: column;
+    font-size: 16px;
+    width: 100%;
+    max-width: 200px;
+    margin: 6px 0;
+    min-height: 44px; /* Tamaño táctil mínimo */
+  }
+  
+  .agregarMonstruo {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+  
+  .agregarMonstruo p {
+    font-size: 30px;
+    left: 20%;
+  }
+  
+  .botonAgregar {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Orientación landscape en móviles */
+@media (max-height: 500px) and (max-width: 768px) {
+  #contenedor2 {
+    padding: 0.5rem;
+    overflow-y: auto;
+  }
+  
+  .menu_nav {
+    margin-top: 2rem;
+    gap: 8px;
+  }
+  
+  .menu_nav a,
+  .menuButton {
+    font-size: 18px;
+    padding: 4px 0;
+  }
+  
+  #resultados {
+    height: 300px;
+  }
+  
+  .monstroCard {
+    height: 120px;
+    font-size: 14px;
+  }
+}
+
+/* Pantallas muy grandes (más de 1440px) */
+@media (min-width: 1440px) {
+  .menu_nav {
+    margin-top: 8rem;
+    gap: 30px;
+  }
+  
+  .menu_nav a,
+  .menuButton {
+    font-size: 32px;
+  }
+  
+  .menuButton::before,
+  .menuButton::after {
+    height: 3.5rem;
+    width: 3.5rem;
+    left: -4rem;
+  }
+  
+  #resultados {
+    height: 700px;
+  }
+  
+  .monstroCard {
+    font-size: 26px;
+    height: 40%;
+  }
+}
+
+/* ===================== MEJORAS DE ACCESIBILIDAD ===================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .menuButton:hover::after {
+    animation: none;
+  }
+  
+  .agregarMonstruo p {
+    transition: none;
+  }
+}
+
+/* Asegurar scroll suave en dispositivos táctiles */
+#contenedor2,
+#resultados {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mejorar focus para navegación con teclado */
+.menuButton:focus-visible,
+.agregarMonstruo:focus-visible {
+  outline: 2px solid rgb(241, 175, 31);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
 
 /*===================== Animaciones =====================*/
 @keyframes saturate {
@@ -239,7 +556,6 @@
 
   100% {
     transform: scale(1.1);
-    /* Puedes modificar este valor para obtener el efecto deseado */
   }
 }
 /* =============================================================== */

@@ -1,572 +1,68 @@
-@font-face {
-  font-family: "mh";
-  src: url(/recursos/fonts/MarkaziText-VariableFont_wght.ttf);
-  font-weight: bold;
-  font-style: bold;
-}
+/* ===================== MEDIA QUERIES RESPONSIVAS ===================== */
 
-/* ============================= Estilos pata los Tags ============================= */
-* {
-  scrollbar-width: none;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-p {
-  font-size: 20px;
-}
-
-:after,
-:before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-a:hover {
-  filter: drop-shadow(0 0 0.75rem rgb(216, 177, 94));
-}
-
-a:active {
-  filter: drop-shadow(0 0 0.75rem rgb(250, 225, 84))
-    drop-shadow(0 0 0.75rem rgb(250, 225, 84));
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
-  background-color: #000;
-  color: #dcdcdc;
-  flex-direction: column;
-}
-
-img {
-  margin: 0;
-  line-height: 1;
-  width: auto;
-  max-width: 100%;
-  height: 100%;
-}
-
-a,
-h1{
-  text-decoration: none;
-  line-height: 1.2;
-  color: #dcdcdc;
-  text-shadow: 5px 5px 16px rgba(0, 0, 0, 0.4);
-}
-
-footer {
-  display: flex;
-  flex-direction: column;
-  div{
-  padding: 24px 24px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-image: url(/recursos/footer_bg.png);
-  background-size: cover;
-  position: relative;
-  width: 100%;
+/* Tabletas (769px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .logo {
+    top: -15vh;
   }
   
-}
-
-/* =============================================================== */
-
-/* ============================== Main Pirncipal ============================== */
-#contenedor1 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: auto;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  height: auto;
-  line-height: 1.5;
-  background-color: #000;
-  color: #dcdcdc;
-}
-
-/* ========================================================================================== */
-
-/* ============================== logo principal de la pagina ============================== */
-.iconExtra{
-  width: 25px;
-  height: 25px;
-  object-fit: cover;
-  padding: 0;
-}
-
-#mainIndex {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  min-height: 120vh;
-  height: 100%;
-  position: relative;
-  z-index: 1;
-}
-
-.logo {
-  position: relative;
-  width: max-content;
-  display: flex;
-  top: -20vh;
-  align-items: center;
-  flex-direction: column;
-  padding: 10px;
-}
-
-.logo_title {
-  max-height: 20rem;
-  aspect-ratio: 16 / 9;
-}
-
-#search {
-  position: static;
-  height: 2rem;
-  border: none;
-  width: 30vh;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-.box {
-  position: relative;
-
-  text-align: center;
-  cursor: pointer;
-}
-
-.buscadorTop {
-  position: absolute;
-  left: -0.2rem;
-  top: -0.35rem;
-  height: 1rem;
-  width: fit-content;
-}
-
-.buscadorDown {
-  position: absolute;
-  right: -0.2rem;
-  bottom: -0.35rem;
-  height: 1rem;
-  width: fit-content;
-}
-
-/* ========================================================================================== */
-
-/* ============================== Fondo de pagina ============================== */
-#background {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-}
-
-#bgVideo1,
-#bgResponsive1 {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  transition: all 0.3s ease;
-  object-fit: cover;
-  z-index: -1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#bgResponsive1 {
-  display: none;
-}
-
-/* ========================================================================================== */
-
-/* ============================== Apartado de Guia y noticias ============================== */
-#noticias,
-#guia {
-  padding: 1rem;
-  padding-bottom: 10rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  font-family: Markazi Text, "source-han-serif-japanese", serif;
-  width: 100%;
-  z-index: 1;
-}
-
-#guia {
-  background-image: url(/recursos/bgImagen0.jpg);
-}
-.guiaContainer {
-  display: flex;
-  gap: 150px;
-  flex-direction: column;
-  justify-content: center;
-  padding: 4px 100px;
-}
-.guia1 {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
-}
-.guia2 {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  justify-content: end;
-}
-.guiaImage1 {
-  border-radius: 8px;
-  position: relative;
-  width: 600px;
-  min-width: 300px;
-}
-.guiaText {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 50%;
-  left: 45%;
-  top: 50%;
-  position: absolute;
-  padding: 30px;
-  z-index: 2;
-}
-.guiaText2 {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 50%;
-  right: 45%;
-  top: 50%;
-  position: absolute;
-  padding: 30px;
-  z-index: 2;
-}
-
-.guiaBack {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(0deg, rgba(52, 39, 1, 0.8), rgba(10, 8, 0, 0.8));
-  filter: blur(6px);
-  z-index: -1;
-}
-
-#noticias {
-  background-image: url(/recursos/bgImagen2.JPEG);
-}
-
-.title_text_shadow {
-  font-size: 5.5rem;
-  position: absolute;
-  z-index: -1;
-  top: 1rem;
-  left: 2rem;
-  opacity: 0.2;
-  width: 100%;
-}
-
-.title_text_letter {
-  font-size: 5rem;
-  width: 100%;
-  color: #dcdcdc;
-  text-shadow: 5px 5px 16px rgba(0, 0, 0, 0.4);
-  animation: saturate 2s infinite;
-  transition: all 0.2s ease-out;
-}
-
-.title_text {
-  font-family: Markazi Text, "source-han-serif-japanese", serif;
-  font-weight: 400;
-  position: relative;
-  display: inline-block;
-  width: 300px;
-}
-
-.dec_letter_1 {
-  position: absolute;
-  top: 3rem;
-  left: 15rem;
-}
-
-.dec_letter_2 {
-  position: absolute;
-  left: -1rem;
-  top: -1rem;
-}
-
-.dec_letter_3 {
-  position: absolute;
-  left: 8rem;
-  top: 5rem;
-}
-
-.noticia_1,
-.noticia_2 {
-  background-size: cover;
-  padding: 5rem 3rem;
-  height: fit-content;
-  text-align: left;
-  background-image: url(/recursos/parrafos\ bg.png);
-  a{
-    font-size: 30px;
+  .logo_title {
+    max-height: 15rem;
+  }
+  
+  .guiaContainer {
+    gap: 100px;
+    padding: 4px 50px;
+  }
+  
+  .guiaImage1 {
+    width: 500px;
+  }
+  
+  .guiaText, 
+  .guiaText2 {
+    width: 45%;
+    padding: 20px;
+  }
+  
+  .title_text_letter {
+    font-size: 4rem;
+  }
+  
+  .title_text_shadow {
+    font-size: 4.5rem;
+  }
+  
+  .noticia_1, 
+  .noticia_2 {
+    padding: 4rem 2rem;
+  }
+  
+  .noticia_1 a, 
+  .noticia_2 a {
+    font-size: 26px;
+  }
+  
+  .Video-class {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .Video0, 
+  .Video1, 
+  .Video2, 
+  .Video3 {
+    width: 45%;
+    margin: 10px;
+  }
+  
+  .Video_play {
+    width: 25%;
   }
 }
 
-
-/* ========================================================================================== */
-
-/* ============================== Apartado de videos ============================== */
-.Video-class {
-  display: flex;
-  flex-direction: row;
-  align-items: left;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
-.Video_play {
-  position: absolute;
-  z-index: 4;
-  width: 20%;
-  bottom: 3%;
-  right: 5%;
-  height: auto;
-}
-
-.Video0,
-.Video1,
-.Video2,
-.Video3 {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  width: 20%;
-  margin: 0 auto;
-}
-
-.Video0 > img,
-.Video1 > img,
-.Video2 > img,
-.Video3 > img {
-  position: absolute;
-}
-
-.Video0::after {
-  content: "";
-  position: absolute;
-  top: -0.3rem;
-  left: -0.3rem;
-  right: -0.3rem;
-  bottom: -0.3rem;
-  background-image: url(/recursos/border_video.png);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  /* Centra la imagen */
-  pointer-events: none;
-}
-
-.Video1::after {
-  content: "";
-  position: absolute;
-  top: -0.3rem;
-  left: -0.3rem;
-  right: -0.3rem;
-  bottom: -0.3rem;
-  background-image: url(/recursos/border_video.png);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  /* Centra la imagen */
-  pointer-events: none;
-}
-
-.Video2::after {
-  content: "";
-  position: absolute;
-  top: -0.3rem;
-  left: -0.3rem;
-  right: -0.3rem;
-  bottom: -0.3rem;
-  background-image: url(/recursos/border_video.png);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  /* Centra la imagen */
-  pointer-events: none;
-}
-
-.Video3::after {
-  content: "";
-  position: absolute;
-  top: -0.3rem;
-  left: -0.3rem;
-  right: -0.3rem;
-  bottom: -0.3rem;
-  background-image: url(/recursos/border_video.png);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  /* Centra la imagen */
-  pointer-events: none;
-}
-
-.Video_tittle {
-  text-align: left;
-  color: #dcdcdc;
-  text-shadow: 5px 5px 16px rgba(0, 0, 0, 0.4);
-}
-
-/* ========================================================================================== */
-
-/* ============================== Botones ============================== */
-.menuIcon {
-  padding: 10px;
-  position: fixed;
-  width: 6rem;
-  height: 6rem;
-  cursor: pointer;
-  background: url("/recursos/abrir\ menu.png") center/cover no-repeat;
-  transition: all 0.2s ease-out;
-  z-index: 5;
-  right: 1.8rem;
-  top: 0.5rem;
-}
-
-.btnMenu {
-  position: absolute;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 0.57rem;
-  width: 2rem;
-  height: 2rem;
-  z-index: 5;
-  background: transparent;
-  border: none;
-  top: 2.1rem;
-  left: 2rem;
-}
-
-.btnMenu span {
-  transition: all 0.5s;
-  background-color: #dcdcdc;
-  height: 0.15rem;
-  width: 100%;
-  border-radius: 5px;
-  transform-origin: left;
-}
-
-.menuIcon:hover span:first-child {
-  transform: rotate(45deg);
-}
-
-.menuIcon:hover span:nth-child(2) {
-  opacity: 0;
-}
-
-.menuIcon:hover span:last-child {
-  transform: rotate(-45deg);
-}
-
-/* ========================================================================================== */
-
-/* ============================== Decoraciones ============================== */
-.scrollDown{
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
-  position: absolute;
-  z-index: -1;
-  bottom: 30vh;
-  width: 50px;
-  height: 50px;
-  animation: scrolldown alternate 1s infinite ease-in-out;
-}
-
-.containerB {
-  width: 100%;
-  height: fit-content;
-}
-
-.transition {
-  min-height: 1vh;
-  height: 1vh;
-  background-image: url(/recursos/transition.png);
-  background-size: cover;
-  z-index: 4;
-  width: 100%;
-  position: relative;
-}
-.separadorDecoracion {
-  border: none;
-  height: 2vh;
-  min-height: 2vh;
-  background-size: cover;
-  max-width: 75%;
-  width: 100%;
-  background-image: url("/recursos/decoraciones/decoracion\ 4.webp");
-}
-.mask {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 1) 100%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.space {
-  height: 12vh;
-}
-
-/* ========================================================================================== */
-
-/* ============================== animacion ==============================  */
-@keyframes scrolldown {
-  0%{
-    bottom: 30vh;
-  }
-  100%{
-    bottom: 25vh;
-  }
-}
-/* ========================================================================================== */
-
-/* ============================== medias querys ============================== */
-@media (758px > width) {
+/* Tabletas pequeñas (577px - 768px) */
+@media (max-width: 768px) and (min-width: 577px) {
   #bgVideo1 {
     display: none;
   }
@@ -574,63 +70,461 @@ footer {
   #bgResponsive1 {
     display: block;
   }
-
-  #noticias #guia {
-    top: 20rem;
-    right: 0;
-    left: 0;
-    width: auto;
-    text-align: center;
-    min-width: auto;
-    font-size: 2.5rem;
+  
+  .logo {
+    top: -10vh;
   }
-
+  
+  .logo_title {
+    max-height: 12rem;
+  }
+  
+  #search {
+    width: 25vh;
+    font-size: 1.25rem;
+  }
+  
+  .guiaContainer {
+    gap: 80px;
+    padding: 4px 30px;
+  }
+  
+  .guia1, 
+  .guia2 {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .guiaImage1 {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .guiaText, 
+  .guiaText2 {
+    position: relative;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 20px 10px;
+  }
+  
   .title_text_letter {
-    font-size: 4rem;
-    left: 0;
-    right: 0;
+    font-size: 3.5rem;
   }
-
+  
   .title_text_shadow {
-    display: none;
+    font-size: 4rem;
+    top: 0.5rem;
+    left: 1rem;
   }
-
-  .title {
-    right: 0;
-    left: 0;
-    width: auto;
-    text-align: center;
-    min-width: auto;
-  }
-
+  
   .dec_letter_1 {
-    position: absolute;
     top: 1rem;
-    left: 14rem;
+    left: 12rem;
   }
-
-  .dec_letter_2 {
-    position: absolute;
-    left: -1.5rem;
-  }
-
+  
   .dec_letter_3 {
-    left: 8rem;
-    top: 3.5rem;
-    position: absolute;
+    left: 6rem;
+    top: 3rem;
   }
-
+  
+  .noticia_1, 
+  .noticia_2 {
+    padding: 3rem 1.5rem;
+  }
+  
+  .noticia_1 a, 
+  .noticia_2 a {
+    font-size: 24px;
+  }
+  
   .Video-class {
     flex-direction: column;
   }
-
-  .Video0,
-  .Video1,
-  .Video2,
+  
+  .Video0, 
+  .Video1, 
+  .Video2, 
   .Video3 {
-    min-width: 80%;
-    margin-bottom: 20px;
+    width: 80%;
+    margin-bottom: 30px;
+  }
+  
+  .Video_play {
+    width: 30%;
+    bottom: 2%;
+    right: 3%;
+  }
+  
+  footer div {
+    height: 250px;
+    padding: 20px;
+  }
+  
+  .menuIcon {
+    width: 5rem;
+    height: 5rem;
+    right: 1rem;
+    top: 0.3rem;
+  }
+  
+  .btnMenu {
+    top: 1.8rem;
+    left: 1.5rem;
   }
 }
 
-/* ========================================================================================== */
+/* Móviles (481px - 576px) */
+@media (max-width: 576px) and (min-width: 481px) {
+  #bgVideo1 {
+    display: none;
+  }
+
+  #bgResponsive1 {
+    display: block;
+  }
+  
+  .logo {
+    top: -8vh;
+  }
+  
+  .logo_title {
+    max-height: 10rem;
+  }
+  
+  #search {
+    width: 20vh;
+    font-size: 1.1rem;
+  }
+  
+  .guiaContainer {
+    gap: 60px;
+    padding: 4px 20px;
+  }
+  
+  .guia1, 
+  .guia2 {
+    flex-direction: column;
+  }
+  
+  .guiaImage1 {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .guiaText, 
+  .guiaText2 {
+    position: relative;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 15px 5px;
+  }
+  
+  .title_text_letter {
+    font-size: 2.8rem;
+  }
+  
+  .title_text_shadow {
+    font-size: 3.2rem;
+    display: none;
+  }
+  
+  .dec_letter_1, 
+  .dec_letter_2, 
+  .dec_letter_3 {
+    display: none;
+  }
+  
+  .noticia_1, 
+  .noticia_2 {
+    padding: 2rem 1rem;
+  }
+  
+  .noticia_1 a, 
+  .noticia_2 a {
+    font-size: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+  }
+  
+  .Video-class {
+    flex-direction: column;
+  }
+  
+  .Video0, 
+  .Video1, 
+  .Video2, 
+  .Video3 {
+    width: 90%;
+    margin-bottom: 25px;
+  }
+  
+  .Video_play {
+    width: 35%;
+    bottom: 1%;
+    right: 2%;
+  }
+  
+  footer div {
+    height: 200px;
+    padding: 15px;
+  }
+  
+  .menuIcon {
+    width: 4rem;
+    height: 4rem;
+    right: 0.8rem;
+    top: 0.2rem;
+  }
+  
+  .btnMenu {
+    top: 1.5rem;
+    left: 1rem;
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  
+  .scrollDown {
+    width: 40px;
+    height: 40px;
+    bottom: 25vh;
+  }
+}
+
+/* Móviles pequeños (menos de 480px) */
+@media (max-width: 480px) {
+  #bgVideo1 {
+    display: none;
+  }
+
+  #bgResponsive1 {
+    display: block;
+  }
+  
+  * {
+    font-size: 18px;
+  }
+  
+  .logo {
+    top: -5vh;
+    padding: 5px;
+  }
+  
+  .logo_title {
+    max-height: 8rem;
+  }
+  
+  #search {
+    width: 15vh;
+    font-size: 1rem;
+    height: 1.8rem;
+  }
+  
+  .buscadorTop, 
+  .buscadorDown {
+    height: 0.8rem;
+  }
+  
+  .guiaContainer {
+    gap: 40px;
+    padding: 4px 10px;
+  }
+  
+  .guia1, 
+  .guia2 {
+    flex-direction: column;
+  }
+  
+  .guiaImage1 {
+    width: 100%;
+    min-width: 250px;
+  }
+  
+  .guiaText, 
+  .guiaText2 {
+    position: relative;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 10px 0;
+    gap: 10px;
+  }
+  
+  .title_text_letter {
+    font-size: 2.2rem;
+  }
+  
+  .title_text_shadow {
+    display: none;
+  }
+  
+  .dec_letter_1, 
+  .dec_letter_2, 
+  .dec_letter_3 {
+    display: none;
+  }
+  
+  .noticia_1, 
+  .noticia_2 {
+    padding: 1.5rem 0.8rem;
+  }
+  
+  .noticia_1 a, 
+  .noticia_2 a {
+    font-size: 18px;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  
+  .Video-class {
+    flex-direction: column;
+  }
+  
+  .Video0, 
+  .Video1, 
+  .Video2, 
+  .Video3 {
+    width: 95%;
+    margin-bottom: 20px;
+  }
+  
+  .Video_play {
+    width: 40%;
+    bottom: 0.5%;
+    right: 1%;
+  }
+  
+  footer div {
+    height: 180px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .menuIcon {
+    width: 3.5rem;
+    height: 3.5rem;
+    right: 0.5rem;
+    top: 0.1rem;
+  }
+  
+  .btnMenu {
+    top: 1.2rem;
+    left: 0.8rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    gap: 0.4rem;
+  }
+  
+  .btnMenu span {
+    height: 0.12rem;
+  }
+  
+  .scrollDown {
+    width: 35px;
+    height: 35px;
+    bottom: 20vh;
+  }
+  
+  .transition {
+    height: 0.5vh;
+    min-height: 0.5vh;
+  }
+  
+  .space {
+    height: 8vh;
+  }
+  
+  .iconExtra {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Orientación landscape en móviles */
+@media (max-height: 500px) and (max-width: 768px) {
+  #mainIndex {
+    min-height: 100vh;
+  }
+  
+  .logo {
+    top: -5vh;
+  }
+  
+  .logo_title {
+    max-height: 8rem;
+  }
+  
+  .scrollDown {
+    display: none;
+  }
+  
+  .guiaContainer {
+    gap: 30px;
+    padding: 4px 20px;
+  }
+  
+  .Video-class {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .Video0, 
+  .Video1, 
+  .Video2, 
+  .Video3 {
+    width: 45%;
+    margin: 5px;
+  }
+}
+
+/* Pantallas muy grandes (más de 1440px) */
+@media (min-width: 1440px) {
+  .logo_title {
+    max-height: 25rem;
+  }
+  
+  .guiaContainer {
+    padding: 4px 150px;
+  }
+  
+  .guiaImage1 {
+    width: 700px;
+  }
+  
+  .title_text_letter {
+    font-size: 6rem;
+  }
+  
+  .title_text_shadow {
+    font-size: 6.5rem;
+  }
+}
+
+/* ===================== MEJORAS DE ACCESIBILIDAD ===================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollDown {
+    animation: none;
+  }
+  
+  .title_text_letter {
+    animation: none;
+  }
+}
+
+/* Asegurar que los enlaces sean táctiles */
+a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

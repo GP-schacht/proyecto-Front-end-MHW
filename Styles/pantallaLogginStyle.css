@@ -1,217 +1,416 @@
-@font-face {
-  font-family: "mh";
-  src: url(/recursos/fonts/MarkaziText-VariableFont_wght.ttf);
-  font-weight: bold;
-  font-style: bold;
-}
-* {
-  font-family: mh;
-}
-.logging {
-  position: absolute;
-  top: 3rem;
-  left: 1rem;
-  color: whitesmoke;
-  z-index: 4;
-  button {
-    cursor: pointer;
-    padding: 4px 20px;
-    background-color: transparent;
-    border-radius: 10px;
-    font-size: 35px;
-    color: white;
-    border: 1px solid transparent;
-    animation: FilterBreath infinite alternate 1s;
+/* ===================== MEDIA QUERIES RESPONSIVAS ===================== */
+
+/* Tabletas (769px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .pantallaLoggin {
+    width: 50%;
+    padding: 35px;
+    gap: 28px;
   }
-  button:hover {
-    background-color: rgba(255, 255, 255, 0.527);
-    color: black;
+  
+  .logging {
+    top: 2.5rem;
+    left: 0.8rem;
+  }
+  
+  .logging button {
+    font-size: 32px;
+    padding: 6px 18px;
+  }
+  
+  .iconUsers {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .pantallaLoggin * {
+    font-size: 19px;
+  }
+  
+  .borde1, .borde2, .borde3, .borde4 {
+    width: 85px;
   }
 }
-/*===================== contenedor ===================== */
-.pantallaLoggin {
-  top: 3rem;
-  left: 1rem;
-  position: fixed;
-  display: flex;
-  gap: 32px;
-  width: 40%;
-  min-width: 200px;
-  height: auto;
-  flex-direction: column;
-  padding: 40px;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.582);
-  background-image: url("/recursos/footer_bg.png");
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: cover;
-  z-index: 4;
-  * {
+
+/* Tabletas pequeñas (577px - 768px) */
+@media (max-width: 768px) and (min-width: 577px) {
+  .pantallaLoggin {
+    width: 65%;
+    padding: 30px;
+    gap: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2rem;
+  }
+  
+  .logging {
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+  }
+  
+  .logging button {
+    font-size: 28px;
+    padding: 8px 20px;
+    min-height: 44px;
+  }
+  
+  .iconUsers {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .pantallaLoggin * {
+    font-size: 18px;
+  }
+  
+  .form {
+    gap: 20px;
+  }
+  
+  .botonX {
+    padding: 8px;
+    font-size: 18px;
+  }
+  
+  .borde1, .borde2, .borde3, .borde4 {
+    width: 70px;
+    top: 0.8rem;
+    left: 0.8rem;
+  }
+  
+  .borde2 {
+    right: 0.8rem;
+  }
+  
+  .borde3 {
+    bottom: 0.8rem;
+    right: 0.8rem;
+  }
+  
+  .borde4 {
+    bottom: 0.8rem;
+    left: 0.8rem;
+  }
+}
+
+/* Móviles (481px - 576px) */
+@media (max-width: 576px) and (min-width: 481px) {
+  .pantallaLoggin {
+    width: 80%;
+    padding: 25px;
+    gap: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1.5rem;
+  }
+  
+  .logging {
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .logging button {
+    font-size: 24px;
+    padding: 10px 22px;
+    min-height: 44px;
+  }
+  
+  .iconUsers {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .pantallaLoggin * {
+    font-size: 17px;
+  }
+  
+  .form {
+    gap: 18px;
+    width: 100%;
+  }
+  
+  .inputsUsers {
+    width: 100%;
+  }
+  
+  .user,
+  .password {
+    width: 100%;
+  }
+  
+  input {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .botonX {
+    padding: 6px;
+    font-size: 16px;
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .botonLog button {
+    padding: 8px 16px;
+    min-height: 44px;
+    font-size: 18px;
+  }
+  
+  .borde1, .borde2, .borde3, .borde4 {
+    width: 60px;
+    top: 0.6rem;
+    left: 0.6rem;
+  }
+  
+  .borde2 {
+    right: 0.6rem;
+  }
+  
+  .borde3 {
+    bottom: 0.6rem;
+    right: 0.6rem;
+  }
+  
+  .borde4 {
+    bottom: 0.6rem;
+    left: 0.6rem;
+  }
+}
+
+/* Móviles pequeños (menos de 480px) */
+@media (max-width: 480px) {
+  .pantallaLoggin {
+    width: 90%;
+    padding: 20px;
+    gap: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1rem;
+    min-width: 280px;
+  }
+  
+  .logging {
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .logging button {
     font-size: 20px;
+    padding: 12px 24px;
+    min-height: 44px;
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .iconUsers {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .pantallaLoggin * {
+    font-size: 16px;
+  }
+  
+  .form {
+    gap: 16px;
+    width: 100%;
+  }
+  
+  .inputsUsers {
+    width: 100%;
+    gap: 12px;
+  }
+  
+  .user,
+  .password {
+    width: 100%;
+  }
+  
+  input {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+  
+  .botonX {
+    padding: 8px;
+    font-size: 14px;
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .botonLog {
+    width: 100%;
+    gap: 8px;
+  }
+  
+  .botonLog button {
+    padding: 12px 16px;
+    min-height: 44px;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  .mensaje {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+  
+  .borde1, .borde2, .borde3, .borde4 {
+    width: 50px;
+    top: 0.4rem;
+    left: 0.4rem;
+  }
+  
+  .borde2 {
+    right: 0.4rem;
+  }
+  
+  .borde3 {
+    bottom: 0.4rem;
+    right: 0.4rem;
+  }
+  
+  .borde4 {
+    bottom: 0.4rem;
+    left: 0.4rem;
   }
 }
-/* =============================================================== */
 
-.iconUsers {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
+/* Orientación landscape en móviles */
+@media (max-height: 500px) and (max-width: 768px) {
+  .pantallaLoggin {
+    top: 0.5rem;
+    padding: 15px;
+    gap: 12px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .logging {
+    top: 0.5rem;
+  }
+  
+  .logging button {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+  
+  .iconUsers {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .form {
+    gap: 12px;
+  }
+  
+  .inputsUsers {
+    gap: 8px;
+  }
+  
+  .botonLog button {
+    padding: 8px 12px;
+    min-height: 40px;
+  }
 }
 
-/*===================== formulario =====================*/
-.form {
-  flex-direction: column;
-  gap: 24px;
+/* Pantallas muy grandes (más de 1440px) */
+@media (min-width: 1440px) {
+  .pantallaLoggin {
+    width: 35%;
+    padding: 45px;
+    gap: 36px;
+  }
+  
+  .logging button {
+    font-size: 38px;
+    padding: 8px 24px;
+  }
+  
+  .iconUsers {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .pantallaLoggin * {
+    font-size: 22px;
+  }
+  
+  .borde1, .borde2, .borde3, .borde4 {
+    width: 110px;
+  }
 }
 
-.inputsUsers {
-  display: flex;
-  flex-direction: column;
+/* ===================== MEJORAS DE ACCESIBILIDAD ===================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .logging button {
+    animation: none;
+  }
+  
+  .botonLog button:hover {
+    animation: none;
+  }
+  
+  .animationBorder {
+    animation: none;
+  }
 }
 
-.user,
-.password {
-  display: flex;
-  flex-direction: column;
+/* Mejorar focus para navegación con teclado */
+.logging button:focus-visible,
+.botonX:focus-visible,
+.botonLog button:focus-visible,
+input:focus-visible {
+  outline: 2px solid rgb(241, 175, 31);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
+/* Mejorar contraste en inputs */
+input {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+input:focus {
+  outline: 2px solid rgb(241, 175, 31);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Asegurar que el formulario sea usable en todos los dispositivos */
+.pantallaLoggin {
+  -webkit-overflow-scrolling: touch;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Mejorar visibilidad del botón de cerrar */
 .botonX {
-  z-index: 6;
-  color: white;
-  border-radius: 100px;
-  padding: 10px;
-  margin: 0;
-  border: none;
-  background-color: transparent;
-  align-self: flex-end;
+  font-weight: bold;
+  font-size: 20px;
 }
 
-.botonX:hover {
-  background-color: rgba(255, 255, 255, 0.459);
-}
-
-.botonLog {
-  gap: 10px;
-  display: flex;
-  flex-direction: column;
-
-  button {
-    cursor: pointer;
+/* Optimizar para modo oscuro del sistema */
+@media (prefers-color-scheme: dark) {
+  .pantallaLoggin {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  input {
+    background-color: rgba(255, 255, 255, 0.1);
     color: white;
-    padding: 2px 10px;
-    border: 1px solid transparent;
-    background-color: transparent;
+    border: 1px solid #666;
   }
-
-  button:hover {
-    filter: drop-shadow(0 0 1rem rgb(255, 255, 255));
-    animation: borderBreath infinite 1s alternate;
+  
+  input:focus {
+    background-color: rgba(255, 255, 255, 0.2);
   }
 }
-/* =============================================================== */
-
-.mensaje {
-  text-align: center;
-}
-
-/* ===================== Decoraciones ===================== */
-.animationBorder {
-  width: max-content;
-  height: max-content;
-  object-fit: contain;
-}
-
-.borde1 {
-  top: 1rem;
-  left: 1rem;
-  position: absolute;
-  width: 100px;
-  transform: scale(-1, 1);
-}
-
-.borde2 {
-  top: 1rem;
-  right: 1rem;
-  position: absolute;
-  width: 100px;
-}
-
-.borde3 {
-  bottom: 1rem;
-  right: 1rem;
-  position: absolute;
-  width: 100px;
-  rotate: 180deg;
-  transform: scale(-1, 1);
-}
-
-.borde4 {
-  bottom: 1rem;
-  left: 1rem;
-  position: absolute;
-  width: 100px;
-  rotate: 180deg;
-}
-/* =============================================================== */
-
-/* ===================== animaciones ===================== */
-@keyframes ani-opcity {
-  0% {
-    opacity: 0;
-  }
-
-  25% {
-    opacity: 0.25;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  75% {
-    opacity: 0.75;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes borderBreath {
-  0% {
-    border: 1px solid rgba(255, 255, 255, 0.123);
-  }
-
-  25% {
-    border: 1px solid rgba(255, 255, 255, 0.295);
-  }
-
-  50% {
-    border: 1px solid rgba(255, 255, 255, 0.493);
-  }
-
-  100% {
-    border: 1px solid rgba(255, 255, 255, 0.808);
-  }
-}
-@keyframes FilterBreath {
-  0% {
-    filter: drop-shadow(0 0 1rem rgba(255, 187, 0, 0.151));
-  }
-  20% {
-    filter: drop-shadow(0 0 1rem rgba(255, 187, 0, 0.363));
-  }
-  40% {
-    filter: drop-shadow(0 0 1rem rgba(255, 187, 0, 0.411));
-  }
-  60% {
-    filter: drop-shadow(0 0 1rem rgba(255, 187, 0, 0.562));
-  }
-  80% {
-    filter: drop-shadow(0 0 1rem rgba(255, 187, 0, 0.795));
-  }
-  100% {
-    filter: drop-shadow(0 0 1rem rgb(255, 187, 0));
-  }
-}
-/* =============================================================== */

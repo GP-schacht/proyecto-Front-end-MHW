@@ -1,199 +1,277 @@
-@font-face {
-  font-family: "mh";
-  src: url(/recursos/fonts/MarkaziText-VariableFont_wght.ttf);
-  font-weight: bold;
-  font-style: bold;
+/* ===================== MEDIA QUERIES RESPONSIVAS ===================== */
+
+/* Tabletas (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  * {
+    font-size: 22px;
+  }
+  
+  h1 {
+    font-size: 36px;
+  }
+  
+  h2 {
+    font-size: 28px;
+  }
+  
+  .autorCard {
+    max-width: 70vw;
+    padding: 40px;
+  }
+  
+  .image {
+    max-width: 180px;
+    max-height: 180px;
+  }
+  
+  .borde1, .borde2, .borde3, .borde4 {
+    width: 80px;
+  }
+  
+  .botonRegresar {
+    top: 24px;
+    left: 24px;
+    font-size: 22px;
+  }
+  
+  footer {
+    height: 250px;
+    padding: 20px;
+  }
 }
 
-* {
-  font-family: "mh";
-  font-size: 24px;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  scrollbar-width: none;
-}
-h1 {
-  font-size: 40px;
-}
-h2 {
-  font-size: 30px;
-  align-self: center;
-}
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100vw;
-}
-
-footer {
-  color: #dcdcdc;
-  font-size: 20px;
-  padding: 24px 24px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  background-image: url(/recursos/footer_bg.png);
-  background-size: cover;
-  position: relative;
-  width: 100%;
-}
-/* ============================= Headers ============================= */
-.titulo {
-  display: flex;
-  justify-content: center;
-  color: #dcdcdc;
-}
-.logo {
-  width: 100%;
-}
-/* ======================================================================================= */
-
-/* ============================= Decoraciones ============================= */
-.borde1 {
-  top: 1rem;
-  left: 1rem;
-  position: absolute;
-  width: 100px;
-  transform: scale(-1, 1);
-}
-.borde2 {
-  top: 1rem;
-  right: 1rem;
-  position: absolute;
-  width: 100px;
-}
-.borde3 {
-  bottom: 1rem;
-  right: 1rem;
-  position: absolute;
-  width: 100px;
-  rotate: 180deg;
-  transform: scale(-1, 1);
-}
-.borde4 {
-  bottom: 1rem;
-  left: 1rem;
-  position: absolute;
-  width: 100px;
-  rotate: 180deg;
-}
-.transition {
-  min-height: 1vh;
-  height: 1vh;
-  border: none;
-  background-image: url(/recursos/transition.png);
-  background-size: cover;
-  z-index: 3;
-  width: 100%;
-  position: relative;
-}
-/* ======================================================================================= */
-
-/* ============================= estilos de fondo ============================= */
-.background {
-  background-image: url("/recursos/bg_menu_pc.webp");
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-size: cover;
-}
-/* ======================================================================================= */
-
-/* ============================= estilo de las cartas de los autores ============================= */
-.image {
-  aspect-ratio: 1/1;
-  max-width: 200px;
-  max-height: 200px;
-  min-width: 100px;
-  min-height: 100px;
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
+/* Móviles (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  * {
+    font-size: 20px;
+  }
+  
+  h1 {
+    font-size: 32px;
+  }
+  
+  h2 {
+    font-size: 26px;
+  }
+  
+  .autorCard {
+    max-width: 85vw;
+    padding: 30px;
+    gap: 15px;
+  }
+  
+  .containerAutores {
+    padding: 25px;
+    gap: 20px;
+  }
+  
+  .infoContainer {
+    gap: 20px;
+  }
+  
+  .image {
+    max-width: 150px;
+    max-height: 150px;
+  }
+  
+  .borde1, .borde2, .borde3, .borde4 {
+    width: 60px;
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+  
+  .borde2 {
+    right: 0.5rem;
+  }
+  
+  .borde3 {
+    bottom: 0.5rem;
+    right: 0.5rem;
+  }
+  
+  .borde4 {
+    bottom: 0.5rem;
+    left: 0.5rem;
+  }
+  
+  .botonRegresar {
+    top: 16px;
+    left: 16px;
+    font-size: 20px;
+    padding: 6px 16px;
+    min-height: 44px; /* Tamaño táctil */
+  }
+  
+  footer {
+    height: 200px;
+    padding: 16px;
+    font-size: 18px;
+  }
+  
+  .transition {
+    height: 0.5vh;
+  }
 }
 
-.containerAutores {
-  padding: 35px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-.autorCard {
-  position: relative;
-  padding: 50px;
-  gap: 20px;
-  border-radius: 8px;
-  display: flex;
-  max-width: 50vw;
-  width: 100%;
-  align-self: center;
-  flex-direction: column;
-  background-image: url("/recursos/BgImagen3.webp");
-  background-color: transparent;
-}
-.infoContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 24px;
+/* Móviles pequeños (menos de 480px) */
+@media (max-width: 479px) {
+  * {
+    font-size: 18px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+  
+  .autorCard {
+    max-width: 95vw;
+    padding: 20px;
+    gap: 12px;
+  }
+  
+  .containerAutores {
+    padding: 15px;
+    gap: 16px;
+  }
+  
+  .infoContainer {
+    gap: 16px;
+    flex-direction: column;
+  }
+  
+  .image {
+    max-width: 120px;
+    max-height: 120px;
+    min-width: 80px;
+    min-height: 80px;
+  }
+  
+  .borde1, .borde2, .borde3, .borde4 {
+    width: 40px;
+    top: 0.3rem;
+    left: 0.3rem;
+  }
+  
+  .borde2 {
+    right: 0.3rem;
+  }
+  
+  .borde3 {
+    bottom: 0.3rem;
+    right: 0.3rem;
+  }
+  
+  .borde4 {
+    bottom: 0.3rem;
+    left: 0.3rem;
+  }
+  
+  .botonRegresar {
+    top: 12px;
+    left: 12px;
+    font-size: 18px;
+    padding: 8px 12px;
+    min-height: 44px;
+    gap: 12px;
+  }
+  
+  .botonRegresar:hover {
+    left: 8px;
+  }
+  
+  footer {
+    height: 180px;
+    padding: 12px;
+    font-size: 16px;
+  }
+  
+  .transition {
+    height: 0.3vh;
+  }
+  
+  .logo {
+    max-width: 200px;
+    margin: 0 auto;
+  }
 }
 
-/* ======================================================================================= */
+/* Landscape en móviles (altura reducida) */
+@media (max-height: 500px) and (max-width: 767px) {
+  .autorCard {
+    padding: 15px;
+    gap: 10px;
+  }
+  
+  .containerAutores {
+    padding: 10px;
+    gap: 12px;
+  }
+  
+  .image {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  
+  footer {
+    height: 150px;
+    padding: 10px;
+  }
+  
+  .botonRegresar {
+    top: 8px;
+    left: 8px;
+  }
+}
 
-/* ============================= estilos de botones ============================= */
-.botonRegresar {
-  z-index: 4;
-  top: 32px;
-  left: 32px;
-  position: fixed;
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  padding: 8px 20px;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 20px;
-  align-items: center;
-  font-size: 24px;
+/* Pantallas muy grandes (más de 1440px) */
+@media (min-width: 1440px) {
+  .autorCard {
+    max-width: 40vw;
+  }
+  
+  .image {
+    max-width: 250px;
+    max-height: 250px;
+  }
 }
-.botonRegresar:hover {
-  color: rgb(255, 255, 133);
-  animation: regreso alternate 0.5s infinite;
-  left: 10px;
-}
-.punteroBoton {
-  transform: scale(-1, 1);
-}
-/* ======================================================================================= */
 
-/* ============================= animaciones ============================= */
-@keyframes regreso {
-  0% {
+/* ===================== MEJORAS DE ACCESIBILIDAD ===================== */
+
+/* Para usuarios que prefieren reducir animaciones */
+@media (prefers-reduced-motion: reduce) {
+  .botonRegresar:hover {
+    animation: none;
     left: 32px;
   }
-  25% {
-    left: 25px;
-  }
-  50% {
-    left: 20px;
-  }
-  75% {
-    left: 15px;
-  }
-  100% {
-    left: 10px;
-  }
 }
-/* ======================================================================================= */
 
-@media (max-width: 800px) {
-  .infoContainer {
-    flex-direction: column;
+/* Mejora focus para navegación con teclado */
+.botonRegresar:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Asegurar que las imágenes sean responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mejorar legibilidad en móviles */
+@media (max-width: 767px) {
+  body {
+    line-height: 1.4;
+  }
+  
+  .titulo {
+    text-align: center;
+    padding: 0 10px;
   }
 }

@@ -15,7 +15,7 @@
     flex-direction: column;
     margin: 10px;
     width: 100%;
-    } 
+} 
 
 .liMonstro { 
     display: flex;
@@ -26,15 +26,13 @@
     width: 30rem;
     margin-bottom: 5px; 
     animation: regreso alternate 1s infinite;
-    border-image-source: url('/recursos/transition.png'); /* Asegúrate de que sea visible */
+    border-image-source: url('/recursos/transition.png');
     border-image-slice: 100;
-  
 } 
 
 .liMonstro:hover{
     filter: drop-shadow(0 0 0.75rem rgb(241, 175, 31))
     drop-shadow(0 0 0.75rem rgb(241, 175, 31));
-    
 }
 
 @keyframes regreso {
@@ -53,24 +51,20 @@
     100% {
       left: 10px;
     }
-  }
+}
 
 .monstroImagenCard2 {
-     
-      height: 100%;
-      aspect-ratio: 4/4; 
-      border-radius: 50%; 
-    } 
-
+    height: 100%;
+    aspect-ratio: 4/4; 
+    border-radius: 50%; 
+} 
 
 .contenidoMonstro  {
     display: flex; 
     justify-content: center;
     align-items: center; 
     text-align: center;
-   
     font-size: 2rem; 
-    
 } 
 
 .elementoIcon {
@@ -80,79 +74,207 @@
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: row-reverse;
-    
 }
 .elementoIcon > img{
-  height: 3rem ;
-  aspect-ratio: 4/4;
+    height: 3rem ;
+    aspect-ratio: 4/4;
 }
 
+/* ===================== MEDIA QUERIES CORREGIDAS ===================== */
 
-
-
-    @media (758px > width) { 
-
-        #busquedaContenedor{
-            display: flex;
-            width: 40%;
-            position: relative;
-            flex-direction: column;
-            overflow-y: scroll;
-            transform: translateY(-7rem);
-            background-image: url(/recursos/BgImagen3.webp);
-            background-size: cover;
-            background-position: center;
-        }
-
-        .contenidoMonstro {
-            position: relative;
-            width: fit-content;
-            width: 100%;
-            height: 10%;
-            justify-items: center;
-            flex-direction: column;  
-           } 
-           .elementoIcon {
-            flex-wrap: nowrap;
-            height: 30%;
-            width: 100%;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-        }
-       .monstroImagenCard2 {
-            height: 60%;
-            
-           } 
-
-        .elementoIcon > img{
-            height: 100%;
-        }
-
-
-        #busquedaResult{
-            align-items: center;
-        }
-
-        #busquedaResult > li { 
-            height: 15rem;
-            width: 15rem;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;          
-        } 
-
-        .busquedaDecoration{
-            display: none;
-            position:fixed;
-            transform: translateY(5rem);
-            left: 9rem;
-            top: -6rem;
-            height: 100%;
-            width: 50%;
-            background: linear-gradient(0deg, rgba(52, 39, 1, 0.8), rgba(10, 8, 0, 0.8));
-            
-            z-index: -1;
-            }
-    
+/* Tabletas (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    #busquedaContenedor {
+        width: 30rem;
+        transform: translateY(-5rem);
     }
+    
+    .liMonstro {
+        width: 25rem;
+        height: 80px;
+    }
+    
+    .contenidoMonstro {
+        font-size: 1.75rem;
+    }
+    
+    .elementoIcon > img {
+        height: 2.5rem;
+    }
+}
+
+/* Tabletas pequeñas y móviles grandes (577px - 768px) */
+@media (max-width: 768px) and (min-width: 577px) {
+    #busquedaContenedor {
+        width: 25rem;
+        transform: translateY(-4rem);
+        max-height: 60vh;
+    }
+    
+    .liMonstro {
+        width: 20rem;
+        height: 70px;
+        margin: 0 auto 5px auto;
+    }
+    
+    .contenidoMonstro {
+        font-size: 1.5rem;
+    }
+    
+    .elementoIcon > img {
+        height: 2rem;
+    }
+    
+    .monstroImagenCard2 {
+        height: 90%;
+    }
+}
+
+/* Móviles (481px - 576px) */
+@media (max-width: 576px) and (min-width: 481px) {
+    #busquedaContenedor {
+        width: 90vw;
+        transform: translateY(-3rem);
+        max-height: 50vh;
+        left: 5vw;
+    }
+    
+    #busquedaResult {
+        align-items: center;
+        margin: 5px;
+    }
+    
+    .liMonstro {
+        width: 85vw;
+        height: 60px;
+        flex-direction: row;
+        margin: 0 auto 5px auto;
+    }
+    
+    .contenidoMonstro {
+        font-size: 1.25rem;
+        width: 100%;
+    }
+    
+    .elementoIcon {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .elementoIcon > img {
+        height: 1.75rem;
+    }
+    
+    .monstroImagenCard2 {
+        height: 85%;
+    }
+    
+    .busquedaDecoration {
+        display: none;
+    }
+}
+
+/* Móviles pequeños (menos de 480px) */
+@media (max-width: 480px) {
+    #busquedaContenedor {
+        width: 95vw;
+        transform: translateY(-2rem);
+        max-height: 45vh;
+        left: 2.5vw;
+    }
+    
+    #busquedaResult {
+        align-items: center;
+        margin: 5px;
+    }
+    
+    .liMonstro {
+        width: 90vw;
+        height: 50px;
+        flex-direction: row;
+        margin: 0 auto 5px auto;
+        animation: none; /* Desactivar animación en móviles pequeños */
+    }
+    
+    .contenidoMonstro {
+        font-size: 1rem;
+        width: 100%;
+        justify-content: space-around;
+    }
+    
+    .elementoIcon {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .elementoIcon > img {
+        height: 1.5rem;
+    }
+    
+    .monstroImagenCard2 {
+        height: 80%;
+        min-height: 40px;
+    }
+    
+    .busquedaDecoration {
+        display: none;
+    }
+}
+
+/* Orientación landscape en móviles */
+@media (max-height: 500px) and (max-width: 768px) {
+    #busquedaContenedor {
+        max-height: 70vh;
+        transform: translateY(-1rem);
+    }
+    
+    .liMonstro {
+        height: 45px;
+    }
+    
+    .contenidoMonstro {
+        font-size: 0.9rem;
+    }
+    
+    .elementoIcon > img {
+        height: 1.25rem;
+    }
+}
+
+/* Pantallas muy grandes (más de 1440px) */
+@media (min-width: 1440px) {
+    #busquedaContenedor {
+        width: 40rem;
+    }
+    
+    .liMonstro {
+        width: 35rem;
+        height: 100px;
+    }
+    
+    .contenidoMonstro {
+        font-size: 2.25rem;
+    }
+}
+
+/* ===================== MEJORAS DE ACCESIBILIDAD ===================== */
+
+/* Para usuarios que prefieren reducir animaciones */
+@media (prefers-reduced-motion: reduce) {
+    .liMonstro {
+        animation: none;
+    }
+}
+
+/* Mejorar scroll en dispositivos táctiles */
+#busquedaContenedor {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Asegurar que los elementos sean táctiles */
+.liMonstro {
+    min-height: 44px; /* Tamaño mínimo táctil */
+    padding: 5px;
+}
