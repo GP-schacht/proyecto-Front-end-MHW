@@ -1,57 +1,40 @@
-@font-face {
-  font-family: "mh";
-  src: url(/recursos/fonts/MarkaziText-VariableFont_wght.ttf);
-  font-weight: bold;
-  font-style: bold;
-}
-* {
-  font-family: mh;
-}
-.logging {
-  position: absolute;
-  top: 3rem;
-  left: 1rem;
-  color: whitesmoke;
-  z-index: 4;
-  button {
-    cursor: pointer;
-    padding: 4px 20px;
-    background-color: transparent;
-    border-radius: 10px;
-    font-size: 35px;
-    color: white;
-    border: 1px solid transparent;
-    animation: FilterBreath infinite alternate 1s;
-  }
-  button:hover {
-    background-color: rgba(255, 255, 255, 0.527);
-    color: black;
-  }
-}
-/*===================== contenedor ===================== */
-.pantallaLoggin {
-  top: 3rem;
-  left: 1rem;
+
+/* Overlay que cubre toda la pantalla */
+.overlay {
   position: fixed;
+  inset: 0; /* top:0 right:0 bottom:0 left:0 */
+  background: rgba(0, 0, 0, 0.6); /* oscurece el fondo */
+  display: none;                 /* se muestra al abrir */
+  place-items: center;           /* centra el modal */
+  z-index: 1000;                 /* sobre todo */
+}
+
+/* Body bloqueado cuando el modal está abierto */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* Tu modal, ahora sin top/left para que se centre */
+.pantallaLoggin {
+  position: relative;            /* importante para los bordes decorativos absolutos */
   display: flex;
   gap: 32px;
-  width: 40%;
-  min-width: 200px;
+  width: min(600px, 90vw);
+  min-width: 280px;
   height: auto;
   flex-direction: column;
   padding: 40px;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.582);
+  background-color: rgba(0, 0, 0, 0.82);
   background-image: url("/recursos/footer_bg.png");
   background-repeat: no-repeat;
   background-position: right;
   background-size: cover;
-  z-index: 4;
-  * {
-    font-size: 20px;
-  }
+  border-radius: 12px;
+  color: #fff;
+  animation: ani-opcity 200ms ease-out; /* fade-in suave */
+  z-index: 1001; /* encima del overlay */
 }
-/* =============================================================== */
 
 .iconUsers {
   width: 100px;
@@ -59,159 +42,84 @@
   object-fit: cover;
 }
 
-/*===================== formulario =====================*/
-.form {
-  flex-direction: column;
-  gap: 24px;
-}
-
-.inputsUsers {
-  display: flex;
-  flex-direction: column;
-}
-
-.user,
-.password {
-  display: flex;
-  flex-direction: column;
-}
+.form { flex-direction: column; gap: 24px; }
+.inputsUsers { display: flex; flex-direction: column; }
+.user, .password { display: flex; flex-direction: column; }
 
 .botonX {
-  z-index: 6;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
   color: white;
   border-radius: 100px;
-  padding: 10px;
-  margin: 0;
+  padding: 8px 12px;
   border: none;
-  background-color: transparent;
-  align-self: flex-end;
+  background-color: rgba(255,255,255,0.12);
+  cursor: pointer;
 }
-
-.botonX:hover {
-  background-color: rgba(255, 255, 255, 0.459);
-}
+.botonX:hover { background-color: rgba(255,255,255,0.28); }
 
 .botonLog {
   gap: 10px;
   display: flex;
   flex-direction: column;
-
-  button {
-    cursor: pointer;
-    color: white;
-    padding: 2px 10px;
-    border: 1px solid transparent;
-    background-color: transparent;
-  }
-
-  button:hover {
-    filter: drop-shadow(0 0 1rem rgb(255, 255, 255));
-    animation: borderBreath infinite 1s alternate;
-  }
 }
-/* =============================================================== */
-
-.mensaje {
-  text-align: center;
+.botonLog button {
+  cursor: pointer;
+  color: white;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+.botonLog button:hover {
+  filter: drop-shadow(0 0 1rem rgb(255, 255, 255));
+  animation: borderBreath infinite 1s alternate;
 }
 
-/* ===================== Decoraciones ===================== */
-.animationBorder {
-  width: max-content;
-  height: max-content;
-  object-fit: contain;
-}
+.mensaje { text-align: center; }
 
-.borde1 {
-  top: 1rem;
-  left: 1rem;
-  position: absolute;
-  width: 100px;
-  transform: scale(-1, 1);
-}
-
-.borde2 {
-  top: 1rem;
-  right: 1rem;
+/* Decoraciones: posicionadas relativas al modal */
+.animationBorder { width: max-content; height: max-content; object-fit: contain; }
+.borde1, .borde2, .borde3, .borde4 {
   position: absolute;
   width: 100px;
 }
+.borde1 { top: 1rem; left: 1rem; transform: scale(-1, 1); }
+.borde2 { top: 1rem; right: 1rem; }
+.borde3 { bottom: 1rem; right: 1rem; rotate: 180deg; transform: scale(-1, 1); }
+.borde4 { bottom: 1rem; left: 1rem; rotate: 180deg; }
 
-.borde3 {
-  bottom: 1rem;
-  right: 1rem;
-  position: absolute;
-  width: 100px;
-  rotate: 180deg;
-  transform: scale(-1, 1);
-}
-
-.borde4 {
-  bottom: 1rem;
-  left: 1rem;
-  position: absolute;
-  width: 100px;
-  rotate: 180deg;
-}
-/* =============================================================== */
-
-/* ===================== animaciones ===================== */
 @keyframes ani-opcity {
-  0% {
-    opacity: 0;
-  }
-
-  25% {
-    opacity: 0.25;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  75% {
-    opacity: 0.75;
-  }
-
-  100% {
-    opacity: 1;
-  }
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 @keyframes borderBreath {
-  0% {
-    border: 1px solid rgba(255, 255, 255, 0.123);
-  }
+  0%   { border: 1px solid rgba(255, 255, 255, 0.123); }
+  25%  { border: 1px solid rgba(255, 255, 255, 0.295); }
+  50%  { border: 1px solid rgba(255, 255, 255, 0.493); }
+  100% { border: 1px solid rgba(255, 255, 255, 0.808); }
+}
 
-  25% {
-    border: 1px solid rgba(255, 255, 255, 0.295);
-  }
+/* Toggle de registro */
+.registroExtra { display: grid; gap: 12px; }
+.registroExtra[hidden] { display: none !important; }
 
-  50% {
-    border: 1px solid rgba(255, 255, 255, 0.493);
+/* Botón de apertura de ejemplo */
+.loggingBtn {
+  position: absolute; top: 1rem; left: 1rem;
+  cursor: pointer; padding: 6px 16px; border-radius: 10px;
+  font-size: 18px; color: white; background: rgba(0,0,0,0.4); border: 1px solid transparent;
+}
+.loggingBtn:hover { background: rgba(255,255,255,0.5); color: #000; }
+@media (max-width: 480px) {
+  .pantallaLoggin {
+    padding: 20px;
+    font-size: 16px;
   }
-
-  100% {
-    border: 1px solid rgba(255, 255, 255, 0.808);
+  .iconUsers {
+    width: 80px;
+    height: 80px;
   }
 }
-@keyframes FilterBreath {
-  0% {
-    filter: drop-shadow(0 0 1rem rgba(255, 187, 0, 0.151));
-  }
-  20% {
-    filter: drop-shadow(0 0 1rem rgba(255, 187, 0, 0.363));
-  }
-  40% {
-    filter: drop-shadow(0 0 1rem rgba(255, 187, 0, 0.411));
-  }
-  60% {
-    filter: drop-shadow(0 0 1rem rgba(255, 187, 0, 0.562));
-  }
-  80% {
-    filter: drop-shadow(0 0 1rem rgba(255, 187, 0, 0.795));
-  }
-  100% {
-    filter: drop-shadow(0 0 1rem rgb(255, 187, 0));
-  }
-}
-/* =============================================================== */
+

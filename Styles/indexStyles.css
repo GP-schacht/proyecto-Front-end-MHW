@@ -102,7 +102,7 @@ footer {
   width: 25px;
   height: 25px;
   object-fit: cover;
-  padding: 0;
+  
 }
 
 #mainIndex {
@@ -631,6 +631,122 @@ footer {
     min-width: 80%;
     margin-bottom: 20px;
   }
+
+ 
+
+.logo {
+  /* Opcional: centrar el bloque */
+  display: grid;
+  place-items: center;
 }
 
+.logo_title {
+  /* Mantiene 16:9 y se reduce según el contenedor/pantalla */
+  aspect-ratio: 16 / 9;
+  width: min(100%, 20rem);   /* límite de ancho, se adapta a móviles */
+  max-height: 20rem;         /* tu límite superior de altura */
+  /* Visual */
+  display: block;
+}
+
+.logo_title img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;       /* Evita recortes y deformación */
+  display: block;
+}
+
+
+}
+
+
 /* ========================================================================================== */
+
+/* Contenedor superior: redes + login */
+.top-actions {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;         /* separación entre redes y login */
+  z-index: 1002;        /* sobre el contenido; el overlay del modal debería ser mayor (p.ej. 1000) si quieres que se tape al abrir */
+}
+
+/* Grupo de redes */
+.redes {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;       
+}
+
+/* Enlaces de iconos con área clicable más cómoda */
+
+
+.redes button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.redes button:hover {
+  background: rgba(0,0,0,0.5);
+}
+
+.logging {
+  display: flex;
+  align-items: center;
+}
+/* Botón LOGIN alineado con redes */
+.logging button {
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid transparent;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+
+/* ====== Responsivo ====== */
+@media (max-width: 768px) {
+  .top-actions {
+    gap: 0.5rem;
+    top: 0.75rem;
+    left: 0.75rem;
+  }
+  
+  .redes button {
+    width: 20px;
+    height: 20px;
+  }
+  .logging button {
+    padding: 5px 12px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-actions {
+    gap: 0.4rem;
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+  .redes {
+    gap: 0.4rem;
+  }
+ 
+  .redes button {
+    width: 18px;
+    height: 18px;
+  }
+  .logging button {
+    padding: 4px 10px;
+    font-size: 14px;
+  }
+}

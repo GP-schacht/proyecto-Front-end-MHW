@@ -28,13 +28,22 @@
           <span></span>
         </button>
       </div>
-      <div class="logging">
-        <button type="button" onclick="AbrirLogging()">LOGIN</button>
-        <button type="button"><a href="https://www.google.com" target="_blank"><img class="iconExtra" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png"/></a></button>
+      
+<!-- Acciones superiores: redes + login -->
+<div class="top-actions">
+  <div class="redes" >
+   <button type="button"><a href="https://www.google.com" target="_blank"><img class="iconExtra" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png"/></a></button>
         <button type="button"><a href="https://x.com" target="_blank"><img class="iconExtra" src="https://cdn-icons-png.flaticon.com/512/3938/3938028.png"/></a></button>
         <button type="button"><a href="https://www.instagram.com/" target="_blank"><img class="iconExtra" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1024px-Instagram_logo_2022.svg.png"/></a></button>
         <button type="button"><a href="https://www.tiktok.com/" target="_blank"><img class="iconExtra" src="https://p16-va-tiktok.ibyteimg.com/obj/musically-maliva-obj/a45cf75986e5f90595049b68725bfd87.png"/></a></button>
-      </div>
+  </div>
+
+  <div class="logging">
+    <button type="button" onclick="AbrirLogging()" aria-haspopup="dialog" aria-controls="overlayLogin">LOGIN</button>
+  </div>
+</div>
+
+
     </header>
     
     <!-- Main Principal -->
@@ -70,9 +79,9 @@
           </div>
         </div>
         <div class="busquedaContenedor" id="busquedaContenedor" >
-          <span class="transition"> </span>
+           
         <ul id="busquedaResult">  </ul>
-        <span class="transition"> </span>
+        
         </div>
  
         <div class="scrollDown">
@@ -116,7 +125,7 @@
                   <h2>
                     Visualizar a detalle a un monstruo
                   </h2>
-                  <hr/ class="separadorDecoracion">
+                  <hr class="separadorDecoracion"/>
                   <p>
                     en la pantalla superior hay un boton hamburguesa que te permite abrir un menu para acceder a la barra de busqueda en la que puedes visualizar a los monstruo.<br/>
                     Tambien hay un buscador debajo del titulo
@@ -130,7 +139,7 @@
                   <h2>
                     Agregar nuevo monstruo
                   </h2>
-                  <hr/ class="separadorDecoracion">
+                  <hr class="separadorDecoracion"/>
                   <p>
                     En la pantalla de menu habra un boton de agregar, te direccionara a una pagina de formulario que te permitira agregar un nuevo monstruo.
                   </p>
@@ -143,7 +152,7 @@
                   <h2>
                     Editar y Eliminar monstruo
                   </h2>
-                  <hr/ class="separadorDecoracion">
+                  <hr class="separadorDecoracion"/>
                   <p>
                     Para poder editar o eliminar a un monstruo, tendras que buscar el monstruo por input de busqueda o buscando el monstruo en el menu, abrir sus detalles para acceder a los botones, los botones estan en la parte inferior.
                   </p>
@@ -319,72 +328,72 @@
     </div>
 
     <!-- pantalla desplegable -->
-    <div class="pantallaLoggin" id="pantallaLoggin" style="display: none">
-      <img
-        class="borde4 animationBorder"
-        src="/recursos/decoraciones/BorderFrame2.png"
-      />
-      <img
-        class="borde2 animationBorder"
-        src="/recursos/decoraciones/BorderFrame2.png"
-      />
-      <img
-        class="borde3 animationBorder"
-        src="/recursos/decoraciones/BorderFrame2.png"
-      />
-      <img
-        class="borde1 animationBorder"
-        src="/recursos/decoraciones/BorderFrame2.png"
-      />
-      <button class="botonX" onclick="AbrirLogging()">X</button>
-      <div>
-        <img src="/recursos/user.webp" class="iconUsers" />
+   
+<!-- Overlay -->
+<div id="overlayLogin" class="overlay" aria-hidden="true" style="display: none">
+  <!-- Modal -->
+  <div class="pantallaLoggin" role="dialog" aria-labelledby="login-title" aria-modal="true">
+    <button class="botonX" aria-label="Cerrar panel" onclick="CerrarPanelLogin()">X</button>
+
+    <h2 id="login-title" class="mensaje">Acceso</h2>
+
+    <form class="form" id="form" style="display: flex" novalidate>
+      <div class="inputsUsers">
+        <div class="user">
+          <label for="user">Nombre Usuario</label>
+          <input id="user" type="text" placeholder="usuario" name="usuario" required />
+        </div>
+
+        <div class="password">
+          <label for="password">Contraseña</label>
+          <input id="password" type="password" placeholder="********" name="password" minlength="8" required />
+          <small id="passwordHelp" class="help">Mínimo 8 caracteres.</small>
+        </div>
+
+        <div id="registroExtra" class="registroExtra" hidden>
+          <div class="correo">
+            <label for="correo">Correo</label><br />
+            <input id="correo" type="email" placeholder="correo@dominio.com" name="correo" required />
+          </div>
+
+          <div class="nombre">
+            <label for="nombre">Nombre</label><br />
+            <input id="nombre" type="text" placeholder="Tu nombre" name="nombre" required />
+          </div>
+
+          <div class="apellido">
+            <label for="apellido">Apellido</label><br />
+            <input id="apellido" type="text" placeholder="Tu apellido" name="apellido" required />
+          </div>
+        </div>
       </div>
-  <!-- Seccion de Logging -->
-      <form class="form" id="form" style="display: flex">
-        <div class="inputsUsers">
-          <div class="user">
-            <label for="user">Nombre Usuario</label>
-            <input
-              id="user"
-              type="text"
-              placeholder="user"
-              name="usuario"
-              required
-            />
-          </div>
-          <div class="password">
-            <label for="password">Contraseña</label>
-            <input
-              id="password"
-              type="password"
-              placeholder="********"
-              name="password"
-              required
-            />
-          </div>
-        </div>
-        <div class="botonLog">
-          <button type="submit" data-action="registrar">Registrarse</button>
-          <button type="submit" data-action="inicio">Iniciar sesion</button>
-        </div>
-      </form>
-      <button
-        style="display: none"
-        id="cerrar"
-        class="botonCerrarSesion"
-        onclick="CerrarSesion(this)"
-      >
-        Cerrar Sesion
-      </button>
-    </div>
+
+      <div class="botonLog">
+        <div class="modo">
+          <button type="button" id="toggleRegistro" aria-pressed="false">Quiero registrarme</button>
+          <button type="button" id="toggleLogin" aria-pressed="true">Ya tengo cuenta</button>
+        </div> <br/> <button type="submit" data-action= "registar"> Enviar</button>>
+      </div>
+    </form>
+
+    <button style="display: none" id="cerrar" class="botonCerrarSesion" onclick="CerrarSesion(this)">
+      Cerrar Sesion
+    </button>
+
+    <p id="msg" class="mensaje" role="status" aria-live="polite"></p>
+  </div>
+</div>
+
+
+
 
     <!-- footer de la pagina -->
     <script src="/scripts/script.js"></script>
     <script src="/scripts/scriptBuscador.js"></script>
+    <script src="/scripts/loggin.js"></script>
 
     <footer>
-      <span class="transition"> </span>
+      
       <div class="footerInfo">
         <h1>Monster Hunter API</h1>
         <p>&copy; Sitio. Gael Pereira. Rubén Feng. César Aburto.</p>
