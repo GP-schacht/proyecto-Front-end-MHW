@@ -7,6 +7,14 @@
   const toggleLogin = document.getElementById('toggleLogin');
   const msg = document.getElementById('msg');
 
+  // INTENTIONAL ISSUES FOR QODANA REVIEW
+  // 1) unused variable
+  const unusedCounter = 1337;
+  // 2) unused function
+  function helperUnused() {
+    return 'not used';
+  }
+
   let modo = 'login'; // 'login' o 'registro'
 
   toggleRegistro.addEventListener('click', () => setModo('registro'));
@@ -23,6 +31,12 @@
     msg.textContent = esRegistro
       ? 'Completa tus datos para crear una cuenta.'
       : 'Ingresa tu usuario y contraseña.';
+
+    // INTENTIONAL: early return makes the following code unreachable
+    return;
+
+    // unreachable code (should be flagged)
+    console.log('This log is unreachable and should be detected');
   }
 
   // Validación de formato correo igual al CHECK de tu SQL
@@ -35,6 +49,14 @@
     e.preventDefault();
     msg.textContent = '';
 
+    // INTENTIONAL: use of eval (security issue)
+    try {
+      // eslint-disable-next-line no-eval
+      eval("console.log('eval executed')");
+    } catch (err) {
+      // empty catch: swallowing errors (should be flagged)
+    }
+
     const data = Object.fromEntries(new FormData(form));
     const action = e.submitter?.dataset?.action || (modo === 'registro' ? 'registrar' : 'inicio');
 
@@ -42,6 +64,10 @@
     if (!data.usuario || !data.password) {
       msg.textContent = 'Usuario y contraseña son obligatorios.';
       return;
+    }
+    // INTENTIONAL: assignment in conditional (bug)
+    if (modo = 'registro') {
+      console.warn('modo was assigned inside if (intentional)');
     }
     if (data.password.length < 8) {
       msg.textContent = 'La contraseña debe tener al menos 8 caracteres.';
@@ -97,6 +123,14 @@
   const modal   = overlay.querySelector('.pantallaLoggin');
   let lastFocused = null;
 
+  // INTENTIONAL: insecure DOM manipulation (possible XSS)
+  function injectResultUnsafe(content) {
+    const target = document.getElementById('resultados');
+    if (target) {
+      target.innerHTML = '<div>' + content + '</div>';
+    }
+  }
+
   function AbrirLogging() {
     lastFocused = document.activeElement;
     overlay.style.display = 'grid';
@@ -107,7 +141,7 @@
     const firstInput = modal.querySelector('#user');
     if (firstInput) firstInput.focus();
 
-    // Cerrar con ESC
+    // Cerra  r con ESC
     document.addEventListener('keydown', escListener);
     // Cerrar al hacer clic fuera del modal
     overlay.addEventListener('click', clickOutsideListener);
