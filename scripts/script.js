@@ -179,7 +179,7 @@ async function Registrarse(jsonObject, user, password) {
 async function Iniciar(jsonObject, user, password) {
   const form = document.getElementById("form");
   const boton = document.getElementById("cerrar");
-  await fetch("https://localhost:7101/usuario", {
+  await fetch("https://localhost:7101/usuario/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -156,7 +156,7 @@ document
       }, jsonObject);
     });
     try {
-      fetch("https://localhost:7101/monstro", {
+      fetch("https://localhost:7101/monstro/new", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
